@@ -6,46 +6,97 @@ import { Calendar, Clock, Users, Target } from "lucide-react";
 const Gantt = () => {
   const projectPhases = [
     {
-      phase: "Phase 1: Foundation",
-      duration: "Weeks 1-3",
-      progress: 75,
+      phase: "1. Project Planning & Website Setup",
+      duration: "Days 1-15",
+      progress: 100,
+      status: "Completed",
+      tasks: [
+        { name: "Executive Proposal", start: "Day 1", duration: 5, completed: true, color: "bg-purple-500" },
+        { name: "Define Website Structure & Page Layout", start: "Day 6", duration: 10, completed: true, color: "bg-purple-500" },
+      ]
+    },
+    {
+      phase: "2. Coaching & Communication Toolkit",
+      duration: "Days 16-30",
+      progress: 85,
       status: "In Progress",
       tasks: [
-        { name: "Leadership Assessment", start: "Week 1", duration: 1, completed: true },
-        { name: "Project Planning", start: "Week 2", duration: 1, completed: true },
-        { name: "Coaching Framework", start: "Week 3", duration: 1, completed: false },
+        { name: "Design Coaching Templates", start: "Day 16", duration: 8, completed: true, color: "bg-green-500" },
+        { name: "Create Team Communication Strategies", start: "Day 20", duration: 10, completed: false, color: "bg-purple-500" },
       ]
     },
     {
-      phase: "Phase 2: Development",
-      duration: "Weeks 4-8",
-      progress: 25,
+      phase: "3. Customer Service & Escalation",
+      duration: "Days 31-45",
+      progress: 60,
+      status: "In Progress",
+      tasks: [
+        { name: "Create Customer Service Workflows", start: "Day 31", duration: 8, completed: false, color: "bg-green-500" },
+        { name: "Build Escalation Policy Templates", start: "Day 35", duration: 10, completed: false, color: "bg-purple-500" },
+      ]
+    },
+    {
+      phase: "4. KPI Dashboard & Budget Tools",
+      duration: "Days 46-60",
+      progress: 40,
       status: "Planned",
       tasks: [
-        { name: "KPI Dashboard Creation", start: "Week 4", duration: 2, completed: false },
-        { name: "Performance Analytics", start: "Week 5", duration: 2, completed: false },
-        { name: "Service Excellence Framework", start: "Week 7", duration: 2, completed: false },
+        { name: "Define KPIs for IT Supervision", start: "Day 46", duration: 8, completed: false, color: "bg-purple-500" },
+        { name: "Develop Mini Budget Template", start: "Day 50", duration: 7, completed: false, color: "bg-purple-500" },
+        { name: "Design KPI Dashboard for Website", start: "Day 54", duration: 6, completed: false, color: "bg-purple-500" },
       ]
     },
     {
-      phase: "Phase 3: Integration",
-      duration: "Weeks 9-12",
+      phase: "5. Team Leadership & HR Toolkit",
+      duration: "Days 61-75",
+      progress: 20,
+      status: "Future",
+      tasks: [
+        { name: "Create Interview Templates", start: "Day 61", duration: 8, completed: false, color: "bg-purple-500" },
+        { name: "Build Onboarding & Training Materials", start: "Day 65", duration: 10, completed: false, color: "bg-purple-500" },
+      ]
+    },
+    {
+      phase: "6. Ethics & Cultural Adaptation Plan",
+      duration: "Days 76-85",
       progress: 0,
       status: "Future",
       tasks: [
-        { name: "Ethics & Culture Planning", start: "Week 9", duration: 2, completed: false },
-        { name: "Final Integration", start: "Week 11", duration: 1, completed: false },
-        { name: "Portfolio Optimization", start: "Week 12", duration: 1, completed: false },
+        { name: "Draft Ethics Policy", start: "Day 76", duration: 5, completed: false, color: "bg-green-500" },
+        { name: "Build Cultural Readiness Materials", start: "Day 78", duration: 7, completed: false, color: "bg-purple-500" },
+      ]
+    },
+    {
+      phase: "7. Final Design, Testing & Integration",
+      duration: "Days 86-90",
+      progress: 0,
+      status: "Future",
+      tasks: [
+        { name: "Finalize Website Design", start: "Day 86", duration: 2, completed: false, color: "bg-green-500" },
+        { name: "Test All Functional Components", start: "Day 87", duration: 2, completed: false, color: "bg-purple-500" },
+        { name: "Implement Revisions and Final Integration", start: "Day 88", duration: 3, completed: false, color: "bg-red-500" },
+      ]
+    },
+    {
+      phase: "8. Video Presentation",
+      duration: "Days 88-90",
+      progress: 0,
+      status: "Future",
+      tasks: [
+        { name: "Record Final Video Presentation", start: "Day 88", duration: 2, completed: false, color: "bg-green-500" },
+        { name: "Publish Final Website and Submit Link", start: "Day 89", duration: 2, completed: false, color: "bg-purple-500" },
       ]
     }
   ];
 
   const milestones = [
-    { name: "Coaching Toolkit Complete", week: "Week 4", type: "major" },
-    { name: "KPI Dashboard Launch", week: "Week 6", type: "major" },
-    { name: "Mid-Project Review", week: "Week 8", type: "review" },
-    { name: "Ethics Framework Complete", week: "Week 10", type: "major" },
-    { name: "Final Portfolio Delivery", week: "Week 12", type: "major" },
+    { name: "Website Structure Complete", day: "Day 15", type: "major" },
+    { name: "Coaching Toolkit Launch", day: "Day 30", type: "major" },
+    { name: "Customer Service Framework", day: "Day 45", type: "review" },
+    { name: "KPI Dashboard Complete", day: "Day 60", type: "major" },
+    { name: "HR Toolkit Ready", day: "Day 75", type: "major" },
+    { name: "Ethics Framework Complete", day: "Day 85", type: "major" },
+    { name: "Final Portfolio Delivery", day: "Day 90", type: "major" },
   ];
 
   const getStatusColor = (status: string) => {
@@ -84,15 +135,15 @@ const Gantt = () => {
           <Card className="text-center shadow-soft">
             <CardContent className="p-6">
               <Calendar className="h-8 w-8 text-primary mx-auto mb-2" />
-              <h3 className="font-semibold text-2xl text-primary">12</h3>
-              <p className="text-muted-foreground text-sm">Total Weeks</p>
+              <h3 className="font-semibold text-2xl text-primary">90</h3>
+              <p className="text-muted-foreground text-sm">Total Days</p>
             </CardContent>
           </Card>
           
           <Card className="text-center shadow-soft">
             <CardContent className="p-6">
               <Target className="h-8 w-8 text-success mx-auto mb-2" />
-              <h3 className="font-semibold text-2xl text-success">5</h3>
+              <h3 className="font-semibold text-2xl text-success">7</h3>
               <p className="text-muted-foreground text-sm">Major Milestones</p>
             </CardContent>
           </Card>
@@ -108,11 +159,38 @@ const Gantt = () => {
           <Card className="text-center shadow-soft">
             <CardContent className="p-6">
               <Users className="h-8 w-8 text-destructive mx-auto mb-2" />
-              <h3 className="font-semibold text-2xl text-destructive">3</h3>
+              <h3 className="font-semibold text-2xl text-destructive">8</h3>
               <p className="text-muted-foreground text-sm">Project Phases</p>
             </CardContent>
           </Card>
         </div>
+
+        {/* Legend */}
+        <Card className="shadow-soft mb-6">
+          <CardHeader>
+            <CardTitle className="text-lg">Timeline Legend</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="flex flex-wrap gap-6">
+              <div className="flex items-center gap-2">
+                <div className="w-4 h-4 bg-green-500 rounded"></div>
+                <span className="text-sm">Estimated time</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-4 h-4 bg-purple-500 rounded"></div>
+                <span className="text-sm">Tasks completed</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-4 h-4 bg-red-500 rounded"></div>
+                <span className="text-sm">Behind schedule</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <div className="w-4 h-4 bg-gray-300 rounded"></div>
+                <span className="text-sm">Not yet started</span>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
 
         {/* Gantt Chart Visualization */}
         <Card className="shadow-medium mb-12">
@@ -146,7 +224,7 @@ const Gantt = () => {
                       >
                         <h4 className="font-medium text-sm mb-1">{task.name}</h4>
                         <p className="text-xs text-muted-foreground">
-                          {task.start} • {task.duration} week{task.duration > 1 ? 's' : ''}
+                          {task.start} • {task.duration} day{task.duration > 1 ? 's' : ''}
                         </p>
                         {task.completed && (
                           <Badge className="bg-success text-success-foreground text-xs mt-2">
@@ -174,7 +252,7 @@ const Gantt = () => {
                   <div className={`w-3 h-3 rounded-full ${getMilestoneColor(milestone.type)}`}></div>
                   <div className="flex-1">
                     <h4 className="font-medium">{milestone.name}</h4>
-                    <p className="text-sm text-muted-foreground">{milestone.week}</p>
+                    <p className="text-sm text-muted-foreground">{milestone.day}</p>
                   </div>
                   <Badge variant="outline" className="capitalize">
                     {milestone.type}
