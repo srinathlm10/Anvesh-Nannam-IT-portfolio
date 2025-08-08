@@ -48,7 +48,7 @@ const Home = () => {
                   size="lg" 
                   className="bg-accent hover:bg-accent/90 text-accent-foreground font-semibold"
                 >
-                  <Link to="/portfolio">
+                  <Link to="/gantt">
                     Explore My Work <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>
@@ -174,7 +174,6 @@ const Home = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { title: "Portfolio Gallery", desc: "Course submissions & project outcomes", link: "/portfolio" },
               { title: "Project Management", desc: "Interactive Gantt charts & planning", link: "/gantt" },
               { title: "Coaching Toolkit", desc: "Employee development frameworks", link: "/coaching" },
               { title: "KPI Dashboard", desc: "Performance metrics & analytics", link: "/kpi" },

@@ -9,7 +9,7 @@ const Navigation = () => {
 
   const navItems = [
     { path: "/", label: "Home" },
-    { path: "/portfolio", label: "Portfolio" },
+    
     { path: "/gantt", label: "Project Management" },
     { path: "/coaching", label: "Coaching Toolkit" },
     { path: "/kpi", label: "KPI Dashboard" },
