@@ -12,7 +12,7 @@ const Gantt = () => {
       status: "Completed",
       tasks: [
         { name: "Executive Proposal", start: "Day 1", duration: 5, completed: true, color: "bg-purple-500" },
-        { name: "Define Website Structure & Page Layout", start: "Day 6", duration: 10, completed: true, color: "bg-purple-500" },
+        { name: "Define Website Structure & Page Layout", start: "Day 6", duration: 5, completed: true, color: "bg-purple-500" },
       ]
     },
     {
@@ -21,8 +21,8 @@ const Gantt = () => {
       progress: 100,
       status: "Completed",
       tasks: [
-        { name: "Design Coaching Templates", start: "Day 16", duration: 8, completed: true, color: "bg-green-500" },
-        { name: "Create Team Communication Strategies", start: "Day 20", duration: 10, completed: true, color: "bg-purple-500" },
+        { name: "Design Coaching Templates", start: "Day 16", duration: 5, completed: true, color: "bg-green-500" },
+        { name: "Create Team Communication Strategies", start: "Day 20", duration: 5, completed: true, color: "bg-purple-500" },
       ]
     },
     {
@@ -31,8 +31,8 @@ const Gantt = () => {
       progress: 100,
       status: "Completed",
       tasks: [
-        { name: "Create Customer Service Workflows", start: "Day 31", duration: 8, completed: true, color: "bg-green-500" },
-        { name: "Build Escalation Policy Templates", start: "Day 35", duration: 10, completed: true, color: "bg-purple-500" },
+        { name: "Create Customer Service Workflows", start: "Day 31", duration: 5, completed: true, color: "bg-green-500" },
+        { name: "Build Escalation Policy Templates", start: "Day 35", duration: 5, completed: true, color: "bg-purple-500" },
       ]
     },
     {
@@ -41,9 +41,9 @@ const Gantt = () => {
       progress: 100,
       status: "Completed",
       tasks: [
-        { name: "Define KPIs for IT Supervision", start: "Day 46", duration: 8, completed: true, color: "bg-purple-500" },
-        { name: "Develop Mini Budget Template", start: "Day 50", duration: 7, completed: true, color: "bg-purple-500" },
-        { name: "Design KPI Dashboard for Website", start: "Day 54", duration: 6, completed: true, color: "bg-purple-500" },
+        { name: "Define KPIs for IT Supervision", start: "Day 46", duration: 5, completed: true, color: "bg-purple-500" },
+        { name: "Develop Mini Budget Template", start: "Day 50", duration: 5, completed: true, color: "bg-purple-500" },
+        { name: "Design KPI Dashboard for Website", start: "Day 54", duration: 5, completed: true, color: "bg-purple-500" },
       ]
     },
     {
@@ -52,8 +52,8 @@ const Gantt = () => {
       progress: 100,
       status: "Completed",
       tasks: [
-        { name: "Create Interview Templates", start: "Day 61", duration: 8, completed: true, color: "bg-purple-500" },
-        { name: "Build Onboarding & Training Materials", start: "Day 65", duration: 10, completed: true, color: "bg-purple-500" },
+        { name: "Create Interview Templates", start: "Day 61", duration: 5, completed: true, color: "bg-purple-500" },
+        { name: "Build Onboarding & Training Materials", start: "Day 65", duration: 5, completed: true, color: "bg-purple-500" },
       ]
     },
     {
@@ -63,7 +63,7 @@ const Gantt = () => {
       status: "Completed",
       tasks: [
         { name: "Draft Ethics Policy", start: "Day 76", duration: 5, completed: true, color: "bg-green-500" },
-        { name: "Build Cultural Readiness Materials", start: "Day 78", duration: 7, completed: true, color: "bg-purple-500" },
+        { name: "Build Cultural Readiness Materials", start: "Day 78", duration: 5, completed: true, color: "bg-purple-500" },
       ]
     },
     {
@@ -72,9 +72,9 @@ const Gantt = () => {
       progress: 100,
       status: "Completed",
       tasks: [
-        { name: "Finalize Website Design", start: "Day 86", duration: 2, completed: true, color: "bg-green-500" },
-        { name: "Test All Functional Components", start: "Day 87", duration: 2, completed: true, color: "bg-purple-500" },
-        { name: "Implement Revisions and Final Integration", start: "Day 88", duration: 3, completed: true, color: "bg-red-500" },
+        { name: "Finalize Website Design", start: "Day 86", duration: 5, completed: true, color: "bg-green-500" },
+        { name: "Test All Functional Components", start: "Day 87", duration: 5, completed: true, color: "bg-purple-500" },
+        { name: "Implement Revisions and Final Integration", start: "Day 88", duration: 5, completed: true, color: "bg-red-500" },
       ]
     },
     {
@@ -83,8 +83,8 @@ const Gantt = () => {
       progress: 100,
       status: "Completed",
       tasks: [
-        { name: "Record Final Video Presentation", start: "Day 88", duration: 2, completed: true, color: "bg-green-500" },
-        { name: "Publish Final Website and Submit Link", start: "Day 89", duration: 2, completed: true, color: "bg-purple-500" },
+        { name: "Record Final Video Presentation", start: "Day 88", duration: 5, completed: true, color: "bg-green-500" },
+        { name: "Publish Final Website and Submit Link", start: "Day 89", duration: 5, completed: true, color: "bg-purple-500" },
       ]
     }
   ];
