@@ -1,26 +1,29 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Mail, Phone, MapPin, Download, Linkedin, Github, Calendar } from "lucide-react";
+import { Mail, Phone, MapPin, Download, Linkedin } from "lucide-react";
 
 const Contact = () => {
   const contactInfo = [
-    { icon: Mail, label: "Email", value: "professional@email.com", href: "mailto:professional@email.com" },
-    { icon: Phone, label: "Phone", value: "+1 (555) 123-4567", href: "tel:+15551234567" },
-    { icon: MapPin, label: "Location", value: "City, State", href: "#" },
+    { icon: Mail, label: "Email", value: "anvesh4878@gmail.com", href: "mailto:anvesh4878@gmail.com" },
+    { icon: Phone, label: "Phone", value: "5014429354", href: "tel:5014429354" },
+    { icon: MapPin, label: "Location", value: "Little Rock, AR 72204", href: "#" },
   ];
 
-  const certifications = [
-    { name: "Project Management Professional (PMP)", issuer: "PMI", year: "2023" },
-    { name: "IT Infrastructure Library (ITIL) v4", issuer: "Axelos", year: "2023" },
-    { name: "Certified Scrum Master (CSM)", issuer: "Scrum Alliance", year: "2022" },
-    { name: "AWS Cloud Practitioner", issuer: "Amazon Web Services", year: "2022" },
+  const certifications: { name: string; issuer: string; year?: string }[] = [
+    { name: "Information Theory and Coding", issuer: "Coursera" },
+    { name: "Introduction to the Internet of Things and Embedded Systems", issuer: "Coursera" },
+    { name: "Developing Innovative Ideas for New Companies", issuer: "Coursera" },
+    { name: "NSE1 and NSE2 Cybersecurity", issuer: "Fortinet" },
+    { name: "Data Analysis using Python", issuer: "APSSDC" },
+    { name: "Core Java Certification", issuer: "Internshala" },
   ];
 
   const skills = [
-    "Team Leadership", "Strategic Planning", "Project Management", "Performance Analytics",
-    "Conflict Resolution", "Budget Management", "Process Optimization", "Change Management",
-    "Stakeholder Communication", "Risk Assessment", "Quality Assurance", "Vendor Management"
+    "Basics of Python", "Java (intermediate)", "MathWorks MATLAB", "C programming",
+    "National Instruments LabVIEW", "MySQL", "Excel", "Assembly language (MCU 8051)",
+    "Ansys HFSS", "Arduino IDE", "Quick learner", "Management skills",
+    "Problem-solving", "Goal oriented", "Active listening"
   ];
 
   return (
@@ -76,12 +79,6 @@ const Contact = () => {
                     LinkedIn Profile
                   </a>
                 </Button>
-                <Button variant="outline" className="w-full justify-start" asChild>
-                  <a href="#" target="_blank" rel="noopener noreferrer">
-                    <Github className="mr-2 h-4 w-4" />
-                    GitHub Portfolio
-                  </a>
-                </Button>
                 <Button className="w-full justify-start bg-primary">
                   <Download className="mr-2 h-4 w-4" />
                   Download Resume
@@ -89,22 +86,6 @@ const Contact = () => {
               </CardContent>
             </Card>
 
-            <Card className="shadow-soft">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Calendar className="h-5 w-5 text-primary" />
-                  Schedule Meeting
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-sm text-muted-foreground mb-4">
-                  Available for consultations and interviews
-                </p>
-                <Button className="w-full bg-accent hover:bg-accent/90 text-accent-foreground">
-                  Book a Call
-                </Button>
-              </CardContent>
-            </Card>
           </div>
 
           {/* Professional Summary & Skills */}
@@ -115,14 +96,13 @@ const Contact = () => {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground leading-relaxed mb-6">
-                  Experienced IT professional with a proven track record of leading cross-functional teams 
-                  and delivering strategic technology solutions. Passionate about bridging the gap between 
-                  technical excellence and business objectives through collaborative leadership and continuous innovation.
+                  Pursuing an opportunity that will allow me to grow professionally while effectively utilizing my versatile
+                  skill set to help promote your corporate mission and exceed team goals under any circumstances.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
-                  Seeking IT supervisory roles where I can leverage my expertise in team management, 
-                  project coordination, and stakeholder communication to drive organizational success and 
-                  foster professional growth across diverse technical teams.
+                  Results-driven professional prepared for this role with a strong background in achieving high-impact outcomes.
+                  Skilled in problem-solving, critical thinking, and effective communication. Known for fostering team collaboration
+                  and adapting to evolving needs. Adept at utilizing analytical skills and innovative solutions to drive success.
                 </p>
               </CardContent>
             </Card>
@@ -152,9 +132,9 @@ const Contact = () => {
                     <div key={index} className="border border-border rounded-lg p-4 hover:shadow-soft transition-shadow">
                       <h4 className="font-medium text-foreground mb-1">{cert.name}</h4>
                       <p className="text-sm text-muted-foreground">{cert.issuer}</p>
-                      <Badge variant="outline" className="mt-2 text-xs">
-                        {cert.year}
-                      </Badge>
+                      {cert.year ? (
+                        <Badge variant="outline" className="mt-2 text-xs">{cert.year}</Badge>
+                      ) : null}
                     </div>
                   ))}
                 </div>
