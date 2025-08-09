@@ -55,9 +55,6 @@ const Service = () => {
           <h1 className="text-4xl lg:text-5xl font-bold text-foreground mb-3">
             Customer Service Standards Statement
           </h1>
-          <p className="text-muted-foreground">Information Technology Field Experience-EX20</p>
-          <p className="text-muted-foreground">Anvesh Nannam • Dr. Michael Moifolley • Cumberland University</p>
-          <p className="text-muted-foreground">June 22, 2025</p>
         </header>
 
         <main className="mt-10 space-y-12">
