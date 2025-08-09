@@ -64,22 +64,8 @@ const Home = () => {
             </div>
 
             <div className="relative">
-              <div className="relative z-10">
-                <img 
-                  src={heroPortrait} 
-                  alt="Professional IT Leader" 
-                  className="rounded-2xl shadow-strong w-full max-w-lg mx-auto"
-                />
-              </div>
-              <div className="absolute inset-0 bg-accent/20 rounded-2xl blur-3xl transform translate-x-4 translate-y-4"></div>
-            {/* Image removed as requested */}
-              Leadership Vision & Philosophy
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-4xl mx-auto">
-              I aspire to become a collaborative IT leader who effectively combines deep technical knowledge 
-              with exceptional people management skills. My leadership philosophy emphasizes transparency, 
-              clear communication, and team empowerment at every level.
-            </p>
+              {/* Image removed as requested */}
+            </div>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
