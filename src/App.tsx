@@ -14,6 +14,7 @@ import Service from "./pages/Service";
 import Ethics from "./pages/Ethics";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
+import TeamLeadership from "./pages/TeamLeadership";
 
 const queryClient = new QueryClient();
 
@@ -27,7 +28,7 @@ const App = () => (
           <Navigation />
           <Routes>
             <Route path="/" element={<Home />} />
-            
+            <Route path="/team" element={<TeamLeadership />} />
             <Route path="/gantt" element={<Gantt />} />
             <Route path="/coaching" element={<Coaching />} />
             <Route path="/kpi" element={<KPI />} />

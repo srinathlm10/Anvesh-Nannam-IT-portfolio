@@ -1,0 +1,216 @@
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Clock, BookOpen, Users, Target, Brain, AlertTriangle } from "lucide-react";
+
+const TeamLeadership = () => {
+  const days = [
+    {
+      day: "Day 1",
+      title: "Welcome and Orientation",
+      activities: [
+        { time: "9:00 AM – 10:00 AM", task: "Welcome session and office tour. Meet the team and get introduced to company culture (SHRM, n.d.)." },
+        { time: "10:00 AM – 12:00 PM", task: "HR session about policies, code of conduct, safety, and company values." },
+        { time: "12:00 PM – 1:00 PM", task: "Lunch with supervisor and team lead." },
+        { time: "1:00 PM – 3:00 PM", task: "Set up work systems – email, VPN, ServiceNow, Slack, and Jira." },
+        { time: "3:00 PM – 5:00 PM", task: "Shadow a senior IT support member. Observe ticket handling." }
+      ],
+      icon: Users
+    },
+    {
+      day: "Day 2",
+      title: "Tools and Hands-On Work",
+      activities: [
+        { time: "9:00 AM – 10:30 AM", task: "Overview of internal tools like Active Directory, SCCM, remote access software, and monitoring." },
+        { time: "10:30 AM – 12:00 PM", task: "Shadowing continues – password resets, printer issues, account unlocks." },
+        { time: "1:00 PM – 3:00 PM", task: "Start working on low-priority tasks with senior staff support (Snell, 2006)." },
+        { time: "3:00 PM – 5:00 PM", task: "Learn about KPIs: response time, resolution time, user satisfaction." }
+      ],
+      icon: BookOpen
+    },
+    {
+      day: "Day 3",
+      title: "Independent Work and Goal Setting",
+      activities: [
+        { time: "9:00 AM – 12:00 PM", task: "Handle 2–3 easy tickets independently with supervisor observation." },
+        { time: "1:00 PM – 3:00 PM", task: "1-on-1 meeting with supervisor. Set 30-day learning goals." },
+        { time: "3:00 PM – 5:00 PM", task: "Start LinkedIn Learning course on ITIL Foundation. Plan certifications." }
+      ],
+      icon: Target
+    }
+  ];
+
+  return (
+    <div className="min-h-screen py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid md:grid-cols-2 gap-12 items-start">
+          {/* Left Column - Onboarding Plan */}
+          <div>
+            <div className="text-center mb-12">
+              <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-6">
+                3-Day Onboarding Plan
+              </h2>
+              <p className="text-xl text-muted-foreground">
+                A structured approach to welcome and integrate new IT team members effectively (Bauer, 2014)
+              </p>
+            </div>
+
+            {/* Objective */}
+            <Card className="mt-8">
+              <CardHeader>
+                <CardTitle>Objective</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">
+                  The goal of this onboarding plan is to help a new IT team member feel welcome, understand their responsibilities, 
+                  and start contributing effectively from the first week.
+                </p>
+              </CardContent>
+            </Card>
+
+            {/* Daily Schedule */}
+            <div className="mt-8 space-y-6">
+              {days.map((day, dayIndex) => (
+                <Card key={dayIndex} className="relative overflow-hidden">
+                  <div className="absolute top-4 right-4">
+                    <day.icon className="h-6 w-6 text-muted-foreground/30" />
+                  </div>
+                  <CardHeader>
+                    <CardTitle className="flex items-center gap-2">
+                      <Clock className="h-5 w-5 text-primary" />
+                      {day.day} – {day.title}
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-4">
+                      {day.activities.map((activity, index) => (
+                        <div key={index} className="grid md:grid-cols-[180px,1fr] gap-2">
+                          <div className="font-medium text-primary">{activity.time}</div>
+                          <div className="text-muted-foreground">{activity.task}</div>
+                        </div>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+
+          {/* Right Column - Warning Memo Template */}
+          <div>
+            <div className="text-center mb-12">
+              <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-6">
+                Warning Memo Template
+              </h2>
+              <p className="text-xl text-muted-foreground">
+                Progressive discipline template for maintaining professional conduct (EPGD Law, 2025)
+              </p>
+            </div>
+
+            <Card className="relative overflow-hidden">
+              <div className="absolute top-4 right-4">
+                <AlertTriangle className="h-6 w-6 text-warning/30" />
+              </div>
+              <CardHeader>
+                <CardTitle>Warning Notice for Workplace Conduct Violation</CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <div className="grid grid-cols-2 gap-4 text-sm">
+                  <p><span className="font-medium">Date:</span> [Insert Date]</p>
+                  <p><span className="font-medium">To:</span> [Employee Name]</p>
+                  <p><span className="font-medium">From:</span> Anvesh Nannam, IT Supervisor</p>
+                </div>
+
+                <div className="space-y-4">
+                  <div>
+                    <h3 className="font-semibold mb-2">Violation Summary</h3>
+                    <p className="text-muted-foreground">On [insert date], you were found violating company conduct policy by [briefly describe behavior] (Falcone, 2020).</p>
+                  </div>
+
+                  <div>
+                    <h3 className="font-semibold mb-2">Supervisor Statement</h3>
+                    <p className="text-muted-foreground">Your actions negatively impacted team performance and workplace culture. As your supervisor, I expect you to maintain professionalism and follow all company policies moving forward.</p>
+                  </div>
+
+                  <div>
+                    <h3 className="font-semibold mb-2">Corrective Action Plan</h3>
+                    <ul className="list-disc pl-6 text-muted-foreground space-y-2">
+                      <li>Attend a mandatory behavior improvement session by [insert date].</li>
+                      <li>Submit a written apology (if applicable).</li>
+                      <li>Follow improved conduct for the next 30 days.</li>
+                    </ul>
+                  </div>
+
+                  <div>
+                    <h3 className="font-semibold mb-2">Timeline for Improvement</h3>
+                    <p className="text-muted-foreground">You are expected to show progress by [insert review date]. A follow-up meeting will be scheduled to evaluate your behavior and compliance.</p>
+                  </div>
+
+                  <div>
+                    <h3 className="font-semibold mb-2">Next Steps if Issue Persists</h3>
+                    <p className="text-muted-foreground">Further violation will result in a formal Performance Improvement Plan (PIP) and could lead to suspension or termination (Falcone, 2020).</p>
+                  </div>
+
+                  <div>
+                    <h3 className="font-semibold mb-2">Signatures</h3>
+                    <div className="grid grid-cols-2 gap-4 text-muted-foreground">
+                      <p>Employee: _______________________</p>
+                      <p>Date: ___________</p>
+                      <p>Supervisor: ______________________</p>
+                      <p>Date: ___________</p>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Real-World Example */}
+            <Card className="mt-8">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <Brain className="h-5 w-5" />
+                  Real-World Examples
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <div>
+                  <h3 className="font-semibold mb-2">Onboarding Success</h3>
+                  <p className="text-muted-foreground">
+                    Google offers a well-structured onboarding program for IT roles, including buddy systems, 
+                    tool training, and early performance reviews to support new hires (Trisca, 2025).
+                  </p>
+                </div>
+                <div>
+                  <h3 className="font-semibold mb-2">Progressive Discipline</h3>
+                  <p className="text-muted-foreground">
+                    Progressive discipline helps companies correct employee behavior in a fair and consistent way. 
+                    This method allows employers to give employees multiple chances to improve before taking serious action like termination. 
+                    For example, an HR team may first give a verbal warning, then a written warning, and finally a final notice if the problem continues. 
+                    This step-by-step process helps avoid legal risks and gives employees time to change their behavior (EPGD Law, 2025).
+                  </p>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* References */}
+            <Card className="mt-8">
+              <CardHeader>
+                <CardTitle>References</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-3 text-sm text-muted-foreground">
+                  <p>Bauer, T. N. (2014). Onboarding new employees: Maximizing success. SHRM Foundation.</p>
+                  <p>Employment Practices Group Defense (EPGD) Law. (2025). Understanding progressive discipline in the workplace. EPGD Law.</p>
+                  <p>Falcone, P. (2010). 101 sample write-ups for documenting employee performance problems (2nd ed.). American Management Association.</p>
+                  <p>SHRM. (n.d.). Employee Onboarding Guide.</p>
+                  <p>Snell, A. (2006). Researching onboarding best practice: Using research to connect onboarding processes with employee satisfaction. Strategic HR Review, 5(6), 32–35.</p>
+                  <p>Trisca, L. (2025). How Google onboards new hires (and how you can easily replicate it). Global HR.</p>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default TeamLeadership;
