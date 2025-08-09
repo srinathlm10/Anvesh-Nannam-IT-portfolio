@@ -56,7 +56,7 @@ const Home = () => {
                   asChild 
                   variant="outline" 
                   size="lg"
-                  className="border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10"
+                  className="border-foreground/20 text-foreground hover:bg-foreground/10"
                 >
                   <Link to="/contact">Contact Me</Link>
                 </Button>
