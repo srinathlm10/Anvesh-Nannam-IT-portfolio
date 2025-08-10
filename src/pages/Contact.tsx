@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Mail, Phone, MapPin, Download, Linkedin } from "lucide-react";
+import { Mail, Phone, MapPin, Download } from "lucide-react";
 
 const Contact = () => {
   const contactInfo = [
@@ -73,15 +73,11 @@ const Contact = () => {
                 <CardTitle>Professional Links</CardTitle>
               </CardHeader>
               <CardContent className="space-y-3">
-                <Button variant="outline" className="w-full justify-start" asChild>
-                  <a href="#" target="_blank" rel="noopener noreferrer">
-                    <Linkedin className="mr-2 h-4 w-4" />
-                    LinkedIn Profile
+                <Button className="w-full justify-start bg-primary" asChild>
+                  <a href="https://drive.google.com/file/d/11tefqiZDJLj-Gu7_gtsjYAG_jVVO7sq_/view?usp=drivesdk" target="_blank" rel="noopener noreferrer">
+                    <Download className="mr-2 h-4 w-4" />
+                    Download Resume
                   </a>
-                </Button>
-                <Button className="w-full justify-start bg-primary">
-                  <Download className="mr-2 h-4 w-4" />
-                  Download Resume
                 </Button>
               </CardContent>
             </Card>
