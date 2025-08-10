@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Clock, BookOpen, Users, Target, Brain, AlertTriangle, Calendar, ClipboardList } from "lucide-react";
+import { Clock, BookOpen, Users, Target, Brain, AlertTriangle, ClipboardList } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 
@@ -41,9 +41,9 @@ const TeamLeadership = () => {
   ];
 
   return (
-    <div className="min-h-screen py-12 bg-gray-50">
+    <div className="min-h-screen py-12 bg-background">
       <div className="container mx-auto px-6 sm:px-8 lg:px-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+        <div className="grid grid-cols-1 gap-12 items-start">
           {/* Left Column - Onboarding Plan */}
           <div>
             <div className="text-center mb-12">
