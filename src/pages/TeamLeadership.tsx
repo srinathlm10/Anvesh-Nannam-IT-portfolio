@@ -1,5 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Clock, BookOpen, Users, Target, Brain, AlertTriangle } from "lucide-react";
+import { Clock, BookOpen, Users, Target, Brain, AlertTriangle, ClipboardList } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 
 const TeamLeadership = () => {
   const days = [
@@ -39,9 +41,9 @@ const TeamLeadership = () => {
   ];
 
   return (
-    <div className="min-h-screen py-12 bg-gray-50">
+    <div className="min-h-screen py-12 bg-background">
       <div className="container mx-auto px-6 sm:px-8 lg:px-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+        <div className="grid grid-cols-1 gap-12 items-start">
           {/* Left Column - Onboarding Plan */}
           <div>
             <div className="text-center mb-12">
@@ -120,6 +122,142 @@ const TeamLeadership = () => {
                   <p><strong>Signatures:</strong></p>
                   <p>Employee: _______________________ Date: ___________</p>
                   <p>Supervisor: ______________________ Date: ___________</p>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* PTO Request & Approval Tracker */}
+            <Card className="mt-12">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <ClipboardList className="h-5 w-5 text-primary" />
+                  PTO Request & Approval Tracker
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground mb-4">
+                  A PTO (Paid Time Off) tracker helps supervisors approve time off fairly and plan for coverage.
+                </p>
+                <div className="w-full overflow-x-auto">
+                  <Table>
+                    <TableHeader>
+                      <TableRow>
+                        <TableHead>Employee Name</TableHead>
+                        <TableHead>Requested Dates</TableHead>
+                        <TableHead>Days Off</TableHead>
+                        <TableHead>Approval Status</TableHead>
+                        <TableHead>Notes</TableHead>
+                      </TableRow>
+                    </TableHeader>
+                    <TableBody>
+                      <TableRow>
+                        <TableCell>John Smith</TableCell>
+                        <TableCell>August 5–7, 2025</TableCell>
+                        <TableCell>3</TableCell>
+                        <TableCell><Badge>Approved</Badge></TableCell>
+                        <TableCell>Submitted 2 weeks early</TableCell>
+                      </TableRow>
+                      <TableRow>
+                        <TableCell>Aisha Khan</TableCell>
+                        <TableCell>September 12–15, 2025</TableCell>
+                        <TableCell>4</TableCell>
+                        <TableCell><Badge variant="secondary">Pending</Badge></TableCell>
+                        <TableCell>Needs another team member to cover</TableCell>
+                      </TableRow>
+                      <TableRow>
+                        <TableCell>Mark Lee</TableCell>
+                        <TableCell>July 24, 2025</TableCell>
+                        <TableCell>1</TableCell>
+                        <TableCell><Badge>Approved</Badge></TableCell>
+                        <TableCell>Emergency leave</TableCell>
+                      </TableRow>
+                      <TableRow>
+                        <TableCell>Neha Patel</TableCell>
+                        <TableCell>August 18–22, 2025</TableCell>
+                        <TableCell>5</TableCell>
+                        <TableCell><Badge variant="destructive">Rejected</Badge></TableCell>
+                        <TableCell>Conflict with another absence</TableCell>
+                      </TableRow>
+                    </TableBody>
+                    <TableCaption className="text-xs">
+                      Real-World Example: Automated PTO systems streamline approvals and reduce errors (<a className="underline" href="https://blog.vsoftconsulting.com/blog/benefits-of-automation-pto" target="_blank" rel="noreferrer">V-Soft Consulting, 2016</a>).
+                    </TableCaption>
+                  </Table>
+                </div>
+                <div className="text-xs text-muted-foreground mt-3">
+                  Reference: V-Soft Consulting. (2016). The Benefits of HR Automation: Paid Time Off Tracking. <a className="underline" href="https://blog.vsoftconsulting.com/blog/benefits-of-automation-pto" target="_blank" rel="noreferrer">Link</a>.
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* RACI Chart – IT System Patching Process */}
+            <Card className="mt-12">
+              <CardHeader>
+                <CardTitle className="flex items-center gap-2">
+                  <Users className="h-5 w-5 text-primary" />
+                  RACI Chart – IT System Patching Process
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground mb-4">
+                  A RACI chart clarifies who is Responsible, Accountable, Consulted, and Informed during a process (Project Management Institute, n.d.).
+                </p>
+                <div className="w-full overflow-x-auto">
+                  <Table>
+                    <TableHeader>
+                      <TableRow>
+                        <TableHead>Task</TableHead>
+                        <TableHead>Responsible</TableHead>
+                        <TableHead>Accountable</TableHead>
+                        <TableHead>Consulted</TableHead>
+                        <TableHead>Informed</TableHead>
+                      </TableRow>
+                    </TableHeader>
+                    <TableBody>
+                      <TableRow>
+                        <TableCell>Schedule patch window</TableCell>
+                        <TableCell>IT Support Lead</TableCell>
+                        <TableCell>IT Supervisor</TableCell>
+                        <TableCell>Application Owners</TableCell>
+                        <TableCell>End Users</TableCell>
+                      </TableRow>
+                      <TableRow>
+                        <TableCell>Test patch in test environment</TableCell>
+                        <TableCell>IT Analyst</TableCell>
+                        <TableCell>IT Lead</TableCell>
+                        <TableCell>QA Team</TableCell>
+                        <TableCell>Project Manager</TableCell>
+                      </TableRow>
+                      <TableRow>
+                        <TableCell>Approve patch for production</TableCell>
+                        <TableCell>IT Supervisor</TableCell>
+                        <TableCell>IT Manager</TableCell>
+                        <TableCell>Security Officer</TableCell>
+                        <TableCell>Stakeholders</TableCell>
+                      </TableRow>
+                      <TableRow>
+                        <TableCell>Apply patch to systems</TableCell>
+                        <TableCell>IT Analyst</TableCell>
+                        <TableCell>IT Supervisor</TableCell>
+                        <TableCell>Network Engineer</TableCell>
+                        <TableCell>All Staff</TableCell>
+                      </TableRow>
+                      <TableRow>
+                        <TableCell>Post-patch system check</TableCell>
+                        <TableCell>IT Support Analyst</TableCell>
+                        <TableCell>IT Lead</TableCell>
+                        <TableCell>Dev Team</TableCell>
+                        <TableCell>IT Director</TableCell>
+                      </TableRow>
+                    </TableBody>
+                    <TableCaption className="text-xs">
+                      Each person knows their role, avoiding confusion and keeping the process efficient (Indeed Editorial Team, 2025).
+                    </TableCaption>
+                  </Table>
+                </div>
+                <div className="text-xs text-muted-foreground mt-3 space-y-1">
+                  <p>Real-World Example: Atlassian uses RACI to ensure clarity across IT and DevOps teams (<a className="underline" href="https://www.atlassian.com/work-management/project-management/raci-chart" target="_blank" rel="noreferrer">Atlassian, 2023</a>).</p>
+                  <p>References: <a className="underline" href="https://ca.indeed.com/career-advice/career-development/raci-project-management" target="_blank" rel="noreferrer">Indeed Editorial Team, 2025</a> · <a className="underline" href="https://www.projectmanagement.com/wikis/234008/RACI" target="_blank" rel="noreferrer">PMI, n.d.</a></p>
                 </div>
               </CardContent>
             </Card>

@@ -14,9 +14,6 @@ const Coaching = () => {
           </p>
         </div>
         
-        <div className="mt-16 text-center text-muted-foreground">
-          <p>Content will be added as the project progresses...</p>
-        </div>
         <div className="mt-16">
           <Card className="mt-12">
             <CardHeader>
